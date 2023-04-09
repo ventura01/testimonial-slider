@@ -44,7 +44,14 @@ const Slider = (props: Props) => {
     setIndex(index + 1);
   };
   return (
-    <div className="grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:mx-auto md:h-[800px] md:w-[1440px] md:grid-cols-2 md:bg-slate-50">
+    <div className="relative grid grid-cols-1 grid-rows-2 md:mx-auto md:h-[800px] md:w-[1440px] md:grid-cols-2 md:grid-rows-1 md:bg-slate-50">
+      <Image
+        src="/images/pattern-curve.svg"
+        alt="img"
+        width={900}
+        height={900}
+        className="absolute bottom-0 md:bottom-0"
+      />
       <div
         className={`${inter.className} relative z-50 px-10 py-10 md:my-auto md:px-0 md:py-0 md:pl-44 md:pr-0`}
       >
@@ -53,9 +60,9 @@ const Slider = (props: Props) => {
           alt="img"
           width={120}
           height={120}
-          className="absolute -top-0 left-36 h-16 w-20 object-center md:-top-20 md:left-64 md:h-auto md:w-auto md:object-cover"
+          className="absolute left-36 top-10 h-16 w-20 object-center md:-top-20 md:left-64 md:h-auto md:w-auto md:object-cover"
         />
-        <div className="row-start-2 row-end-3 ">
+        <div className="row-start-2 row-end-3 pt-10 md:pt-0">
           <p className="mb-6 text-center text-xl font-light text-darkBlue md:text-left ">
             {testimonials[index].text}
           </p>
@@ -68,31 +75,24 @@ const Slider = (props: Props) => {
             </span>
           </div>
         </div>
-        <Image
-          src="/images/pattern-curve.svg"
-          alt="img"
-          width={900}
-          height={900}
-          className="absolute md:left-0 md:top-[296px]"
-        />
       </div>
-      <div className="relative h-full w-full">
+      <div className="relative row-start-1 row-end-2 h-full w-full overflow-hidden md:col-start-2 md:col-end-3 md:overflow-visible">
         <Image
           src={testimonials[index].image}
           alt="img"
           width={550}
           height={550}
-          className="absolute z-30 object-cover object-center shadow-xl md:-left-16 md:top-24"
+          className="absolute left-12 top-12 z-30 h-72 w-72 object-cover object-center drop-shadow-xl md:-left-16 md:top-24 md:h-auto md:w-auto"
         />
         <Image
           src="/images/pattern-bg.svg"
           alt="img"
           width={900}
           height={900}
-          className="absolute object-cover object-bottom md:right-28 md:top-10"
+          className="absolute top-5 object-cover object-bottom md:right-28 md:top-10"
         />
-        <div className="relative h-full w-full">
-          <div className="absolute z-[60] flex gap-x-5 rounded-full bg-white px-4 py-2 shadow-md shadow-slate-300 md:bottom-[140px]">
+        <div className="relative left-[140px] top-[320px] h-full w-full md:left-0 md:top-0">
+          <div className="absolute z-[60] flex gap-x-5 rounded-full bg-white px-4 py-2 drop-shadow-lg md:bottom-[140px]">
             <button>
               <ChevronLeftIcon
                 onClick={handlePrev}
